@@ -1,0 +1,36 @@
+<div class="wrapper">
+
+  <table mat-table [dataSource]="data">
+
+    <ng-container matColumnDef="historyId">
+      <mat-header-cell *matHeaderCellDef>historyId</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.historyId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="movieId">
+      <mat-header-cell *matHeaderCellDef>movieId</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.movieId}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="userId">
+      <mat-header-cell *matHeaderCellDef>userId</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.userId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="watchDate">
+
+      <mat-header-cell *matHeaderCellDef>watchDate</mat-header-cell>
+
+        <mat-cell *matCellDef="let element"> {{element.watchDate | date:'yyyy-MM-dd'}} </mat-cell>
+    </ng-container>
+      <ng-container matColumnDef="watchTime">
+          <mat-header-cell *matHeaderCellDef>WatchTime</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+              {{ element.watchTime }}
+          </mat-cell>
+      </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </table>
+</div>
